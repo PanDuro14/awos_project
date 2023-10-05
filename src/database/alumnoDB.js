@@ -27,7 +27,7 @@ const getAllAlumnos = async() =>{
 
 const getOneAlumno = async (Idalumno) => {
     return new Promise (function(resolve, reject){
-        const sql = ('SELECT * FROM aws_project.alumnos where idAlumnos =' + Idalumno); 
+        const sql = 'SELECT * FROM alumnos WHERE idAlumnos = ' + Idalumno; 
         connection.query(sql,(error, results) =>{
             if (error){
                 return reject(error); 
@@ -39,12 +39,12 @@ const getOneAlumno = async (Idalumno) => {
 
 const createNewAlumno= async (nombre, apellido, telefono, direccion) => {
     return new Promise (function(resolve, reject){
-        const sql = ("insert into aws_project.alumnos (nommbre, apellido, telefono, direccion) values ('"+ nombre +"', '" + apellido + "', '" + telefono +"', '" + direccion +"',)");
+        const sql = "INSERT INTO alumnos (nombre, apellido, telefono, direccion) VALUES ('"+ nombre +"', '"+ apellido +"', '"+ telefono +"', '"+ direccion +"')";
         connection.query(sql, (error, results) =>{
             if (error){
                 return reject(error); 
             }
-            resolve(results); 
+            resolve("Alumno Agregado"); 
         });  
     }); 
 }; 
@@ -52,12 +52,12 @@ const createNewAlumno= async (nombre, apellido, telefono, direccion) => {
 
 const updateOneAlumno = async (Idalumno) =>{
     return new Promise (function(resolve, reject){
-        const sql = ("update aws_project.alumnos set nombre = '"+ nombre +"', apellido = '"+ apellido + "', telefono = '"+ telefono + "', direccion = '" + direccion +"' where idAlumnos = " + Idalumno); 
+        const sql = "UPDATE alumnos SET nombre = '"+ nombre +"', apellido = '"+ apellido +"', telefono = '"+ telefono +"', direccion = '"+ direccion +"' WHERE idAlumnos = '"+ Idalumno + "'"; Idalumno); 
         connection.query(sql, (error, results) =>{
             if (error){
                 return reject(error); 
             }
-            resolve(results); 
+            resolve("Alumno Actualizado"); 
         });  
     }); 
 }; 
@@ -65,12 +65,12 @@ const updateOneAlumno = async (Idalumno) =>{
 
 const deleteOneAlumno = async(Idalumno) =>{
     return new Promise (function(resolve, reject){
-        const sql = ('delete from aws_project.alumnos where idAlumno =' +Idalumno); 
+        const sql = 'DELETE FROM alumnos WHERE idAlumnos = '+ Idalumno; 
         connection.query(sql, (error, results) =>{
             if (error){
                 return reject(error); 
             }
-            resolve("Alumno eliminado"); 
+            resolve("Alumno Eliminado"); 
         });  
     }); 
 }; 
