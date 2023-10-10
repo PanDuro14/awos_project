@@ -1,34 +1,34 @@
-const alumnoDB = require("../database/alumnoDB");
+const alumnoService = require("../services/alumnoService");
 
-const getAllAlumnos = async() =>{
-    const alumnos = await alumnoDB.getAllAlumnos(); 
-    return alumnos; 
-}
-
-const getOneAlumnos = async (Idalumno) => {
-    const alumnos = await alumnoDB.getOneAlumnos(Idalumno); 
-    return alumnos; 
+const getAllAlumnos = async () => {
+    const alumnos = await alumnoService.getAllAlumnos();
+    return alumnos
 };
 
-const deleteOneAlumnos = async (Idalumno) => {
-    const alumnos = await alumnoDB.deleteOneAlumnos(Idalumno); 
-    return alumnos; 
+const getOneAlumno = async (Idalumno) => {
+    const alumnos = await alumnoService.getOneAlumno(Idalumno);
+    return alumnos
 };
 
 const createNewAlumno = async(nombre, apellido, telefono, direccion) => {
-    const alumnos = await alumnoDB.createNewAlumno(nombre, apellido, telefono, direccion); 
-    return alumnos; 
+    const alumnos = await alumnoService.createNewAlumno(nombre, apellido, telefono, direccion);
+    return alumnos;
 };
 
-const updateOneAlumno = async(nombre, apellido, telefono, direccion) => {
-    const alumnos = await alumnoDB.updateOneAlumno(nombre, apellido, telefono, direccion); 
-    return alumnos; 
+const updateOneAlumno = async (nombre, apellido, telefono, direccion, Idalumno) =>{
+    const alumnos = await alumnoService.updateOneAlumno(nombre, apellido, telefono, direccion, Idalumno);
+    return alumnos;
+};
+
+const deleteOneAlumno = async (Idalumno) =>{
+    const alumnos = await alumnoService.deleteOneAlumno(Idalumno);
+    return alumnos;
 };
 
 module.exports = {
     getAllAlumnos,
-    getOneAlumnos, 
+    getOneAlumno,
     createNewAlumno,
-    updateOneAlumno, 
-    deleteOneAlumnos, 
-};
+    updateOneAlumno,
+    deleteOneAlumno,
+}

@@ -1,10 +1,11 @@
-const rickandmortyProceso = require("../procesos/rickandmortyProcesos");
+const rickandmortyProceso = require("../procesos/rickandmortyProceso");
 
-const getPersonajes = async(req, res) =>{
-    const personajes = await rickandmortyProceso.getPersonajes(); 
-    res.send(personajes); 
-}
+const getPersonajes = async (req, res) =>{
+    const personajes = await rickandmortyProceso.getPersonajes();
 
-module.exports = {
-    getPersonajes, 
-}
+    res.send(personajes);
+};
+
+module.exports ={
+    getPersonajes,
+};
