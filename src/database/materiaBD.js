@@ -48,9 +48,9 @@ const createNewMateria = async (nombre)=>{
     });
 };
 
-const updateOneMateria = async (nombre, Idmateria) =>{ //NO JALA, CORREGIR
+const updateOneMateria = async (nombre, Idmateria) =>{
     return new Promise(function(resolve, reject){
-        const sql = "UPDATE db_uta.materias SET nombre = '"+ nombre +"', WHERE idMaterias  = '" + Idmateria + "'";
+        const sql = "UPDATE materias SET nombre = '"+ nombre +"' WHERE idMaterias  = '" + Idmateria + "'";
         connection.query(sql,(error, results) =>{
             if (error){
                 return reject(error);

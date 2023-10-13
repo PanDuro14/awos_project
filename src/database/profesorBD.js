@@ -59,7 +59,7 @@ const updateOneProfesor = async(nombre, apellido, telefono, direccion, rfc, Idpr
             if(error){
                 return reject (error)
             }
-            resolve ("Profesor Actualizado"); //NO SALE ESTE MENSAJE EN POSTMAN, RESOLVER
+            resolve ("Profesor Actualizado");
         });
     });
 };
@@ -76,9 +76,6 @@ const deleteOneProfesor = async (Idprofesor) =>{
         });
     });
 };
-
-
-
 
 module.exports = {
     getAllProfesores,
