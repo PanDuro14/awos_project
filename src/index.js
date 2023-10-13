@@ -9,7 +9,8 @@ const v1RickAndMorty = require("./v1/routers/rickandmortyRouter");
 const v1Pokemon = require("./v1/routers/pokemonroutes");
 const v1profesorRouter = require("./v1/routers/profesorRoutes");
 const v1materiaRouter = require("./v1/routers/materiaRoutes");
-const v1Peliculas = require("./v1/routers/peliculasRoutes"); 
+const v1Peliculas = require("./v1/routers/peliculasRoutes");
+const v1Marvel = require("./v1/routers/marvelRouters");
 const v1Ip = require("./v1/routers/ipRouter");
 
 const app = express();
@@ -22,7 +23,9 @@ app.use("/api/v1/pokemon", v1Pokemon);
 app.use("/api/v1/profesor", v1profesorRouter);
 app.use("/api/v1/materia", v1materiaRouter);
 app.use("/api/v1/peliculas", v1Peliculas); 
+app.use("/api/v1/marvel/", v1Marvel); 
 app.use("/api/v1/ip/", v1Ip);
+
 
 
 app.listen(PORT, () => {

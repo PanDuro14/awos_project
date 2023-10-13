@@ -1,10 +1,10 @@
 const mysql =require('mysql');
 
 const connection = mysql.createConnection({
-    host:process.env.HOST_BD,
-    user:process.env.USER_BD,
-    password:process.env.PASSWOR_BD,
-    database:process.env.NAME_BD
+    host:process.env.HOST_DB,
+    user:process.env.USER_DB,
+    password:process.env.PASSWOR_DB,
+    database:process.env.NAME_DB
 });
 
 connection.connect(error =>{
